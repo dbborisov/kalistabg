@@ -1,0 +1,43 @@
+<h1 class="row menu"  >  Меню</h1>
+<div class="container row">
+
+    <div class="stick">
+
+        <div class="col-3" >
+        <menu-category [category]="category"></menu-category>
+        </div>
+    </div>
+    <div class="col-9">
+        <!-- <div *ngFor="let product of filterdProducts "> -->
+            <!-- <div class="card col-4 "> -->
+                <!-- <h4 class="header"><b>{{product.$value.title}}</b></h4>
+                <img [src]="product.$value.imageUrl" *ngIf="product.$value.imageUrl" alt="product.$value.imageUrl"
+                    style="width:100%">
+                <div >
+                    <p>{{product.$value.price }} лв.</p>
+                </div>
+                <div >
+                    <button class="footer" (click)="addToCart(product)">
+                        Добави в количката
+                    </button>
+                </div> -->
+
+                <table>
+                    <tr>
+                      <th>Име</th>
+                      <th>Цена</th>
+
+                    </tr>
+                    <tr *ngFor=" let p of filterdProducts">
+                      <td>{{ p.$value.title}}</td>
+                      <td>{{ p.$value.price | number:'1.2-3'}}</td>
+                      <!-- <td>
+                        <a [routerLink]="['/admin/menu/', p.$key]">Edit</a>
+                      </td> -->
+                    </tr>
+
+                  </table>
+            <!-- </div> -->
+        <!-- </div> -->
+    </div>
+</div>

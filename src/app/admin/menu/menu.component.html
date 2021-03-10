@@ -1,0 +1,52 @@
+<div class="row">
+  <div class="col">
+  <form #f="ngForm" (ngSubmit)= "save(f.value)" >
+      <div class="form-group">
+        <label for="title">Име</label>
+        <input #title= "ngModel"  [(ngModel)] = "product.title"  name="title" id="title" type="text" required>
+        <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
+            Името е задължително!
+        </div>
+      </div>
+      <div class="form-group">
+          <label for="price">Цена</label>
+          <input  #price= "ngModel"  [(ngModel)] = "product.price" name="price"  id="price" type="number" required >
+          <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
+              Цената е задължително!
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="category">Категория</label>
+          <select #category="ngModel"  [(ngModel)] = "product.category" name="category"  id="category" type="text" required >
+              <option value=""></option>
+              <option *ngFor="let c of categories$ | async" [value]="c.payload.key" >
+                  {{c.payload.val().name }}
+              </option>
+          </select>
+          <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
+              Изберете задължително категория!
+          </div>
+      </div>
+      <div class="form-group">
+          <label for="imageUrl">Снимка</label>
+          <input #imageUrl="ngModel"  [(ngModel)] = "product.imageUrl" name="imageUrl"  id="imageUrl" type="text" >
+      </div>
+      <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
+          Снимка е задължителна!
+      </div>
+
+      <button>Save</button>
+      <button type="button" (click) = "delete()">Delete</button>
+  </form>
+  </div>
+
+  <div class ="col">
+      <div class="card">
+          <img [src]="imageUrl.value"  *ngIf="product.imageUrl" alt="Avatar" style="width:100%">
+          <div class="container">
+            <h4><b>{{title.value}}</b></h4>
+            <p>{{price.value}} лв.</p>
+          </div>
+        </div>
+  </div>
+  </div>

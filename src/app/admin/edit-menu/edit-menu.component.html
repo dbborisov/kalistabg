@@ -1,0 +1,22 @@
+
+<p>
+  <input
+  #search
+  (keyup) = "filter(search.value)" placeholder="Search..."
+  type="text">
+</p>
+<table>
+    <tr>
+      <th>Име</th>
+      <th>Цена</th>
+      <th></th>
+    </tr>
+    <tr *ngFor=" let p of filteredProducts">
+      <td>{{ p.$value.title}}</td>
+      <td>{{ p.$value.price}}</td>
+      <td>
+        <a [routerLink]="['/admin/menu/', p.$key]">Edit</a>
+      </td>
+    </tr>
+    
+  </table>

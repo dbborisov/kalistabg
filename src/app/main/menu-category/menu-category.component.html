@@ -1,0 +1,17 @@
+
+<!-- <div class="col-3 stick">        -->
+
+  <ul class="menu ul ">
+    <li>
+        <a routerLink="/menu" class="menu li "  [class.active]="!category">
+            Всички
+        </a>
+    </li>
+    <li *ngFor="let c of categories$ | async" class="menu li ">
+        <a routerLink="/menu" [queryParams]="{category: c.payload.key}"
+         [class.active]="category === c.key">
+            {{c.payload.val().name}}
+        </a>
+    </li>
+</ul>
+<!-- </div> -->

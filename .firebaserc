@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "kalista-30d4c": {
+      "hosting": {
+        "kalista": [
+          "kalista-30d4c"
+        ]
+      }
+    }
+  }
+}
