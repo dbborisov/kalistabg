@@ -9,7 +9,7 @@ import { AuthGuardService } from './service/auth-guard.service';
 import { RoleGardService } from './service/role-gard.service';
 import { MenuComponent } from './main/menu/menu.component';
 import { UploadFormComponent } from './main/gallery/upload-form/upload-form.component';
-import { UploadDetailsComponent } from './main/gallery/upload-details/upload-details.component';
+
 
 
 const routes: Routes = [
