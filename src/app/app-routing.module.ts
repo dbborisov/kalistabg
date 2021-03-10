@@ -1,3 +1,4 @@
+import { ContactsComponent } from './main/contacts/contacts.component';
 import { UploadListComponent } from './main/gallery/upload-list/upload-list.component';
 import { GalleryComponent } from './main/gallery/gallery.component';
 import { EditMenuComponent } from './admin/edit-menu/edit-menu.component';
@@ -17,8 +18,9 @@ const routes: Routes = [
   {path:"gallery",component:GalleryComponent},
   {path:"gallery/list",component:UploadListComponent},
   {path:"gallery/upload",component:UploadFormComponent},
-  // {path:"gallery/detiles",component:UploadDetailsComponent},
+  {path:"contacts",component:ContactsComponent},
   {path:"login",component:LoginComponent},
+
 
   {path:"admin/menu/new",component:AdminMenuComponent, canActivate:[AuthGuardService,RoleGardService]},
   {path:"admin/menu/:id",component:AdminMenuComponent, canActivate:[AuthGuardService,RoleGardService]},

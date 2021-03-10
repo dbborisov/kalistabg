@@ -1,6 +1,8 @@
 <!-- <img src="path-of-image.jpg" (click)="showLightbox(0)" /> -->
+
+<h1>Some object</h1>
 <div>
-  <img *ngFor="let img of imageObject; let i = index" [src]="img.thumbImage || img.posterImage" (click)="showLightbox(i)" />
+  <img *ngFor="let img of imageObject; let i = index" [src]="img.image || img.posterImage" (click)="showLightbox(i)" />
 </div>
 <ng-image-fullscreen-view
     [images]="imageObject"

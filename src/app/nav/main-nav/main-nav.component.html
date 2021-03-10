@@ -1,1 +1,91 @@
-<p>main-nav works!</p>
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ ) ? 'push' : 'side'" [opened]="false">
+    <!-- <img class="block_side" src="../../../assets/logoSnap.JPG" alt="logo Kalista.bg"> -->
+    <mat-toolbar>Навигация</mat-toolbar>
+
+    <!-- <button mat-button routerLink="/">
+      <mat-icon aria-hidden="true">add_shopping_cart</mat-icon>Количка
+    </button> -->
+    <!-- <button mat-button *ngIf="appUser" [matMenuTriggerFor]="certMenu">
+      <mat-icon aria-hidden="false">menu</mat-icon>Сертификати
+    </button>
+    <mat-menu #certMenu="matMenu">
+      <button mat-menu-item  routerLink="/cert/all">Всички Сертификати</button>
+      <button mat-menu-item  routerLink="/cert/add">Добави Сертификат</button>
+      <button mat-menu-item  routerLink="/cert/update">Редактирай Сертификат</button>
+    </mat-menu> -->
+
+    <button mat-button routerLink="/">
+      <mat-icon aria-hidden="false">home</mat-icon>Начало
+    </button>
+    <button mat-button  routerLink="/menu">
+      <mat-icon aria-hidden="false">restaurant_menu</mat-icon>Меню
+    </button>
+    <button mat-button  routerLink="/gallery">
+      <mat-icon aria-hidden="false">collections</mat-icon>Галерия
+    </button>
+    <button mat-button  routerLink="/contacts">
+      <mat-icon aria-hidden="false">location_on</mat-icon>Контакти
+    </button>
+
+    <button mat-button *ngIf="!appUser" routerLink="/login">Вход</button>
+
+    <button mat-button *ngIf="appUser" [matMenuTriggerFor]="items">
+      <mat-icon aria-hidden="false">account_circle</mat-icon>{{appUser.name}}
+    </button>
+    <mat-menu #items="matMenu">
+      <button mat-menu-item *ngIf="isAdmin" routerLink="/admin/menu">Редактирай Меню</button>
+      <button mat-menu-item *ngIf="isAdmin" routerLink="/admin/menu/new">Добави в Менюто</button>
+      <button mat-menu-item *ngIf="isAdmin" routerLink="/gallery/upload">Добави в галерия</button>
+      <button mat-menu-item *ngIf="isAdmin" routerLink="/gallery/list">Качени в галерия</button>
+      <button mat-menu-item *ngIf="isAdmin" (click)="logout()" href="/">Изход</button>
+    </mat-menu>
+
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <!-- <mat-toolbar color="primary"> -->
+      <button type="button" matTooltip="Info about the action" aria-label="Toggle sidenav" mat-icon-button
+        (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+
+      </button>
+      <p>h:{{scrHeight}} w:{{scrWidth}}</p>
+      <img class="block_side" src="../../../assets/logoSnap.JPG" alt="logo Kalista.bg">
+      <!-- <img  src="../../assets/kalista_main_logo.jpg" alt=""> -->
+      <!-- <span></span> -->
+    <span class="spacer"></span>
+      <div *ngIf="(isHandset$ | async) === false">
+        <button mat-button routerLink="/">
+          <mat-icon aria-hidden="false">home</mat-icon>Начало
+        </button>
+        <button mat-button  routerLink="/menu">
+          <mat-icon aria-hidden="false">restaurant_menu</mat-icon>Меню
+        </button>
+        <button mat-button  routerLink="/gallery">
+          <mat-icon aria-hidden="false">collections</mat-icon>Галерия
+        </button>
+        <button mat-button  routerLink="/contacts">
+          <mat-icon aria-hidden="false">location_on</mat-icon>Контакти
+        </button>
+
+        <button mat-button *ngIf="!appUser" routerLink="/login">Вход</button>
+
+        <button mat-button *ngIf="appUser" [matMenuTriggerFor]="beforeMenu">
+          <mat-icon aria-hidden="false">account_circle</mat-icon>{{appUser.name}}
+        </button>
+        <mat-menu #beforeMenu="matMenu" xPosition="before">
+          <button mat-menu-item *ngIf="isAdmin" routerLink="/admin/menu">Меню</button>
+          <button mat-menu-item *ngIf="isAdmin" routerLink="/admin/menu/new">Добави в меню</button>
+          <button mat-menu-item *ngIf="isAdmin" routerLink="/gallery/upload">Добави в галерия</button>
+          <button mat-menu-item *ngIf="isAdmin" routerLink="/gallery/list">Качени в галерия</button>
+          <button mat-menu-item *ngIf="isAdmin" (click)="logout()" href="/">Изход</button>
+        </mat-menu>
+
+
+      </div>
+    <!-- </mat-toolbar> -->
+    <!-- Add Content Here -->
+    <ng-content></ng-content>
+  </mat-sidenav-content>
+</mat-sidenav-container>
