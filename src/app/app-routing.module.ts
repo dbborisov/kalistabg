@@ -1,3 +1,4 @@
+import { HomeComponent } from './main/home/home.component';
 import { ContactsComponent } from './main/contacts/contacts.component';
 import { UploadListComponent } from './main/gallery/upload-list/upload-list.component';
 import { GalleryComponent } from './main/gallery/gallery.component';
@@ -14,6 +15,7 @@ import { UploadFormComponent } from './main/gallery/upload-form/upload-form.comp
 
 
 const routes: Routes = [
+  {path:"",component:HomeComponent},
   {path:"menu",component:MenuComponent},
   {path:"gallery",component:GalleryComponent},
   {path:"gallery/list",component:UploadListComponent},

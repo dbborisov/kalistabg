@@ -4,7 +4,7 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'menu-category',
   templateUrl: './menu-category.component.html',
-  styleUrls: ['./menu-category.component.sass']
+  styleUrls: ['./menu-category.component.scss']
 })
 export class MenuCategoryComponent implements OnInit {
 

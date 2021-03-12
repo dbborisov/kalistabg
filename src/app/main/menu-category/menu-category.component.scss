@@ -1,0 +1,27 @@
+// .menu{
+//   display: flex;
+// }
+
+.side{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  border: black solid 1px;
+  button{
+    width: 100%;
+    color: red;
+    // font-size: 3vw;
+  }
+
+}
+ul{
+  margin: 0;
+  padding: 0;
+  list-style-type:none;
+
+}
+li{
+  padding: 0;
+  margin: 0;
+
+}

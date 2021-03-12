@@ -1,0 +1,29 @@
+$mainColor: orange;
+
+.container-image{
+  margin-top: 30px;
+  width: 98.8vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  img{
+    margin-top: 30px;
+    width: 200px;
+    height: 300px;
+    // border-radius: 40%;
+
+  }
+  img:hover{
+  cursor: pointer;
+
+  }
+}
+// .img-box{
+//   width: 30vw;
+//   height: 30vw;
+// }
+
+
+
+
+

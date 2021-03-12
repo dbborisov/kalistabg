@@ -10,7 +10,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 @Component({
   selector: 'main-nav',
   templateUrl: './main-nav.component.html',
-  styleUrls: ['./main-nav.component.sass']
+  styleUrls: ['./main-nav.component.scss']
 })
 export class MainNavComponent implements OnInit {
 

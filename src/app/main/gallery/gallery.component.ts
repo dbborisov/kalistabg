@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 @Component({
   selector: 'app-gallery',
   templateUrl: './gallery.component.html',
-  styleUrls: ['./gallery.component.sass']
+  styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent implements OnInit {
 
@@ -41,7 +41,7 @@ export class GalleryComponent implements OnInit {
     }
 
     ngOnInit(): void {
-      
+
       this.service.getFiles(10000).snapshotChanges().pipe(
         map(changes =>
           // store the key

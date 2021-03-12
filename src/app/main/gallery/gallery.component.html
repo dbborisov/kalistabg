@@ -1,11 +1,11 @@
 <!-- <img src="path-of-image.jpg" (click)="showLightbox(0)" /> -->
-
-<h1>Some object</h1>
-<div>
-  <img *ngFor="let img of imageObject; let i = index" [src]="img.image || img.posterImage" (click)="showLightbox(i)" />
+<div class="container-image ">
+  
+  <div  *ngFor="let img of imageObject; let i = index">
+    <div  class="snip0025">
+    <img class="curl " [src]="img.image" (click)="showLightbox(i)" />
+    </div>
+  </div>
 </div>
-<ng-image-fullscreen-view
-    [images]="imageObject"
-    [imageIndex]="selectedImageIndex"
-    [show]="showFlag"
-    (close)="closeEventHandler()"></ng-image-fullscreen-view>
+<ng-image-fullscreen-view [images]="imageObject" [imageIndex]="selectedImageIndex" [show]="showFlag"
+  (close)="closeEventHandler()"></ng-image-fullscreen-view>

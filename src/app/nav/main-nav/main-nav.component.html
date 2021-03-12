@@ -1,8 +1,9 @@
-<mat-sidenav-container class="sidenav-container">
-  <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+
+<mat-sidenav-container  >
+  <mat-sidenav #drawer class="sidenav side-container" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
     [mode]="(isHandset$ ) ? 'push' : 'side'" [opened]="false">
     <!-- <img class="block_side" src="../../../assets/logoSnap.JPG" alt="logo Kalista.bg"> -->
-    <mat-toolbar>Навигация</mat-toolbar>
+    <mat-toolbar >Навигация</mat-toolbar>
 
     <!-- <button mat-button routerLink="/">
       <mat-icon aria-hidden="true">add_shopping_cart</mat-icon>Количка
@@ -43,19 +44,23 @@
     </mat-menu>
 
   </mat-sidenav>
-  <mat-sidenav-content>
+
+  <mat-sidenav-content  class="main-container">
     <!-- <mat-toolbar color="primary"> -->
-      <button type="button" matTooltip="Info about the action" aria-label="Toggle sidenav" mat-icon-button
+      <div class="logo">
+      <img class="block_side" src="../../../assets/logoSnap.JPG" alt="logo Kalista.bg">
+      <button  class="button-toggle" type="button" matTooltip="Навигация" aria-label="Toggle sidenav" mat-icon-button
         (click)="drawer.toggle()" *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
 
       </button>
       <p>h:{{scrHeight}} w:{{scrWidth}}</p>
-      <img class="block_side" src="../../../assets/logoSnap.JPG" alt="logo Kalista.bg">
       <!-- <img  src="../../assets/kalista_main_logo.jpg" alt=""> -->
       <!-- <span></span> -->
+
     <span class="spacer"></span>
       <div *ngIf="(isHandset$ | async) === false">
+        <div class="button-nav">
         <button mat-button routerLink="/">
           <mat-icon aria-hidden="false">home</mat-icon>Начало
         </button>
@@ -81,11 +86,15 @@
           <button mat-menu-item *ngIf="isAdmin" routerLink="/gallery/list">Качени в галерия</button>
           <button mat-menu-item *ngIf="isAdmin" (click)="logout()" href="/">Изход</button>
         </mat-menu>
-
+      </div>
 
       </div>
+    </div>
     <!-- </mat-toolbar> -->
     <!-- Add Content Here -->
-    <ng-content></ng-content>
+    <ng-content class="content"></ng-content>
+    <!-- <router-outlet class="content">tt</router-outlet> -->
   </mat-sidenav-content>
+
 </mat-sidenav-container>
+
