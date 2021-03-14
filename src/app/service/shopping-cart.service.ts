@@ -18,7 +18,7 @@ export class ShoppingCartService {
   //   return this.db.object('/shopping-carts/' + cartId);
   // }
 
-  private async getOrCreateCartId() {
+ async getOrCreateCartId() {
     let cartId = localStorage.getItem("cartId");
     if (cartId) {
       return cartId;

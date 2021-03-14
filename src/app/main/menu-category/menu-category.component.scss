@@ -6,12 +6,8 @@
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  border: black solid 1px;
-  button{
-    width: 100%;
-    color: red;
-    // font-size: 3vw;
-  }
+  // border: black solid 1px;
+
 
 }
 ul{
@@ -25,3 +21,51 @@ li{
   margin: 0;
 
 }
+
+
+
+
+button.mat-raised-button.mat-button-base{
+  background-color: 	rgb(221, 136, 71);
+  width: 100%;
+  color: white;
+  font-size: 65%;
+
+}
+// button.mat-raised-button.mat-button-base:hover{
+//   color: brown;
+// }
+
+// mat-list.mat-list.mat-list-base{
+//   width:  15vw;
+//   flex-wrap: nowrap;
+
+// }
+// mat-list-item.menu.li.mat-list-item.ng-star-inserted{
+//    width: 100%;
+// }
+
+
+// :host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content, .mat-list-base .mat-list-item .mat-list-item-content{
+//   padding: 0% ;
+
+//   /* border: solid 1px red; */
+// }
+
+// @media only screen and (max-width: 900px) {
+//   mat-list.mat-list.mat-list-base{
+//       width:  40vw;
+
+
+//   }
+
+//   :host ::ng-deep .mat-list-base .mat-list-item .mat-list-item-content{
+//       padding: 0% ;
+//       /* border: solid 1px blue !important; */
+//   }
+//   :host ::ng-deep .mat-list-base .mat-list-item span.mat-button-wrapper{
+//   font-size: 3vw;
+//   /* color: white; */
+//   }
+
+// }

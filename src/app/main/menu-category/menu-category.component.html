@@ -2,16 +2,18 @@
 <div class="menu">
 
   <ul class="side ">
-    <li>
+    <li  mat-button color="warn"  >
         <a routerLink="/menu" class="menu li "  [class.active]="!category">
             Всички
         </a>
     </li>
     <li *ngFor="let c of categories$ | async" class="menu ">
-        <button    routerLink="/menu" [queryParams]="{category: c.payload.key}"
+        <button mat-raised-button  routerLink="/menu"
+        [queryParams]="{category: c.payload.key}"
          [class.active]="category === c.key">
             {{c.payload.val().name}}
         </button>
+        <mat-divider></mat-divider>
     </li>
 </ul>
 </div>

@@ -94,6 +94,7 @@ import { ContactsComponent } from './main/contacts/contacts.component';
     MatProgressBarModule,
     MatDialogModule,
     FormsModule,
+    
 
   ],
   providers: [],

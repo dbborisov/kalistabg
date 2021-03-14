@@ -13,6 +13,8 @@ export class MenuComponent implements OnInit {
   products: any[] = [];
   filterdProducts: any[] = [];
   category: string;
+  shoppingCardId;
+  wasClicked = false;
 
   constructor(route: ActivatedRoute, productService: ProductsService,private shoppingCartService: ShoppingCartService) {
     productService.getAll().subscribe(prod => {
@@ -26,6 +28,8 @@ export class MenuComponent implements OnInit {
 
       })
     });
+    this.shoppingCardId = this.shoppingCartService.getOrCreateCartId();
+    console.log(this.shoppingCardId)
   }
 
   ngOnInit() {
@@ -36,5 +40,20 @@ export class MenuComponent implements OnInit {
   addToCart(productObj){
     this.shoppingCartService.addToCart(productObj);
   }
+
+  getOrder(id,product){
+   let data = this.shoppingCartService.getItem(id,product);
+   console.log(data);
+  }
+
+  onClick(i:number) {
+    var element = document.getElementsByClassName('flip-card-inner')[i];
+    if(!element.classList.contains("active")){
+      element.classList.add("active");
+    }else{
+      element.classList.remove("active");
+    }
+
+}
 
 }

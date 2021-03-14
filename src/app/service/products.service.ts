@@ -17,7 +17,7 @@ export class ProductsService {
     return this.db.list('/products')
     .snapshotChanges()
     .pipe(map(changes => changes.map(c => ({
-      $key: c.payload.val(), $value: c.payload.val()
+      $key: c.payload.key, $value: c.payload.val()
     }))));
   }
 

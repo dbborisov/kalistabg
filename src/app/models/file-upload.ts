@@ -9,4 +9,5 @@ export class FileUpload {
   constructor(file: File) {
     this.file = file;
   }
+  
 }

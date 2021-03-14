@@ -1,0 +1,42 @@
+.map{
+// border: solid 1px red;
+margin-bottom: 20px;
+display: flex;
+// flex-direction: row;
+color: white;
+justify-content:center;
+grid-template-columns: 1fr 1fr;
+}
+
+.conteiner-contact-work{
+  margin-top: 10vw;
+  border: white 1px solid;
+  // text-align: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  color: white;
+  .contacts{
+    margin: 10px;
+    justify-self: center;
+
+  }
+  .work{
+    margin: 10px;
+    justify-self: center;
+
+  }
+}
+
+.facebook{
+  background-color: white;
+  color: blue;
+
+  border-radius: 100%;
+  cursor: pointer;
+  transition: border-radius 1s;
+
+}
+.facebook:hover{
+  border-radius: 0;
+}
+

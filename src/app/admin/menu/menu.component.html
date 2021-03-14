@@ -1,52 +1,91 @@
-<div class="row">
+<div class="row ">
   <div class="col">
   <form #f="ngForm" (ngSubmit)= "save(f.value)" >
-      <div class="form-group">
-        <label for="title">Име</label>
-        <input #title= "ngModel"  [(ngModel)] = "product.title"  name="title" id="title" type="text" required>
+    <p>
+      <mat-form-field appearance="legacy" class="form-group">
+        <mat-label for="title">Име</mat-label>
+        <input matInput #title= "ngModel"  [(ngModel)] = "product.title"  name="title" id="title" type="text" required>
         <div class="alert alert-danger" *ngIf="title.touched && title.invalid">
             Името е задължително!
         </div>
-      </div>
-      <div class="form-group">
-          <label for="price">Цена</label>
-          <input  #price= "ngModel"  [(ngModel)] = "product.price" name="price"  id="price" type="number" required >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field  class="form-group">
+          <mat-label  for="price">Цена</mat-label >
+          <input matInput  #price= "ngModel"  [(ngModel)] = "product.price" name="price"  id="price" type="number" required >
           <div class="alert alert-danger" *ngIf="price.touched && price.invalid">
               Цената е задължително!
           </div>
-      </div>
-      <div class="form-group">
-          <label for="category">Категория</label>
-          <select #category="ngModel"  [(ngModel)] = "product.category" name="category"  id="category" type="text" required >
-              <option value=""></option>
-              <option *ngFor="let c of categories$ | async" [value]="c.payload.key" >
+      </mat-form-field >
+      </p>
+      <p>
+      <mat-form-field class="form-group">
+          <mat-label for="category">Категория</mat-label>
+          <mat-select  #category="ngModel"  [(ngModel)] = "product.category" name="category"  id="category" type="text" required >
+              <mat-option value=""></mat-option>
+              <mat-option *ngFor="let c of categories$ | async" [value]="c.payload.key" >
                   {{c.payload.val().name }}
-              </option>
-          </select>
+              </mat-option>
+          </mat-select >
           <div class="alert alert-danger" *ngIf="category.touched && category.invalid">
               Изберете задължително категория!
           </div>
-      </div>
-      <div class="form-group">
-          <label for="imageUrl">Снимка</label>
-          <input #imageUrl="ngModel"  [(ngModel)] = "product.imageUrl" name="imageUrl"  id="imageUrl" type="text" >
-      </div>
+      </mat-form-field>
+      </p>
+      <p>
+      <mat-form-field  class="form-group">
+          <mat-label for="imageUrl">Снимка</mat-label>
+          <input matInput #imageUrl="ngModel"  [(ngModel)] = "product.imageUrl || currentFileUpload.url" name="imageUrl"  id="imageUrl" type="text" >
+      </mat-form-field >
+      </p>
       <div class="alert alert-danger" *ngIf="imageUrl.touched && imageUrl.invalid">
           Снимка е задължителна!
       </div>
+      <!-- upload image -->
+      <label>
+        <input
+          type="file"
+          class="text-nowrap text-truncate"
+          (change)="selectFile($event)"
+        />
+      </label>
 
-      <button>Save</button>
+      <button
+        class="btn btn-success btn-sm"
+        [disabled]="!selectedFiles"
+        (click)="upload()"
+      >
+        Upload
+      </button>
+
+      <div *ngIf="currentFileUpload" class="progress mt-2">
+        <div
+          class="progress-bar progress-bar-info"
+          role="progressbar"
+          attr.aria-valuenow="{{ percentage }}"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          [ngStyle]="{ width: percentage + '%' }"
+        >
+          {{ percentage }}%
+        </div>
+      </div>
+<!-- end upload image -->
+
+      <button type="submit">Save</button>
       <button type="button" (click) = "delete()">Delete</button>
   </form>
   </div>
 
   <div class ="col">
       <div class="card">
-          <img [src]="imageUrl.value"  *ngIf="product.imageUrl" alt="Avatar" style="width:100%">
+          <img [src]="imageUrl.value"  *ngIf="product.imageUrl " alt="{{product.title}}" style="width:100%">
           <div class="container">
             <h4><b>{{title.value}}</b></h4>
             <p>{{price.value}} лв.</p>
           </div>
         </div>
+        <button type="button" (click) = "fileMarge()">refresh</button>
   </div>
   </div>

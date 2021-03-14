@@ -15,11 +15,14 @@ export class EditMenuComponent implements OnInit{
   subscribtion: Subscription;
 
   constructor(private productService: ProductsService) {
+
     this.subscribtion = productService.getAll()
     .subscribe(products =>this.filteredProducts =  this.products = products);
+
    }
 
   ngOnInit() {
+
   }
 
   filter(search:string){
@@ -30,7 +33,7 @@ export class EditMenuComponent implements OnInit{
       return p.$value.title.toLowerCase().includes(search.toLowerCase())
       }) :
      this.products;
-
+     console.log(this.filteredProducts)
   }
 
   ngOnDestroy(){
