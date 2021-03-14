@@ -1,4 +1,4 @@
-<h1 class="row-2 menu"> Меню</h1>
+<div class="center">Меню</div>
 <div class="container row">
 
   <div class="stick">
@@ -7,6 +7,7 @@
       <menu-category [category]="category"></menu-category>
     </div>
   </div>
+
   <div class="menu-box">
     <div class="flip-card  " *ngFor="let product of filterdProducts ; let i = index">
       <div class="flip-card-inner "(click)="onClick(i)" >
@@ -15,7 +16,7 @@
           <img [src]="product.$value.imageUrl" *ngIf="product.$value.imageUrl" alt="product.$value.imageUrl"
             style="width:100%">
           <div>
-            <p>{{product.$value.price }} лв.</p>
+            <p>{{product.$value.price | number : '1.2-2' }} лв.</p>
           </div>
           <div>
            <!-- <button class="footer" (click)="addToCart(product)">Добави в количката</button> -->
@@ -23,6 +24,7 @@
         </div>
         <div class="flip-card-back ">
           <p>Съдържа:</p>
+          <div> {{product.$value.detail}}</div>
         </div>
       </div>
 

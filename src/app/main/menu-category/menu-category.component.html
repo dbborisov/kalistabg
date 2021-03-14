@@ -2,10 +2,10 @@
 <div class="menu">
 
   <ul class="side ">
-    <li  mat-button color="warn"  >
-        <a routerLink="/menu" class="menu li "  [class.active]="!category">
+    <li  mat-raised-button  class="menu " >
+        <button routerLink="/menu" class="menu li "  [class.active]="!category">
             Всички
-        </a>
+        </button>
     </li>
     <li *ngFor="let c of categories$ | async" class="menu ">
         <button mat-raised-button  routerLink="/menu"

@@ -4,5 +4,6 @@ export interface ProductInt{
   price:number;
   category:string;
   imageUrl:string;
+  detail:string;
 
 }

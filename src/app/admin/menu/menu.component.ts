@@ -18,7 +18,8 @@ export class AdminMenuComponent implements OnInit {
     title : "",
     price : 0,
     category : "",
-    imageUrl: ""
+    imageUrl: "",
+    detail: ""
   };
   selectedFiles: FileList;
   currentFileUpload: FileUpload ={} as FileUpload ;
