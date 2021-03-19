@@ -1,22 +1,29 @@
 
-<p>
+<p class="search">
   <input
   #search
   (keyup) = "filter(search.value)" placeholder="Search..."
   type="text">
 </p>
-<table>
+<table >
     <tr>
       <th>Име</th>
       <th>Цена</th>
-      <th></th>
+      <th>Редактирай</th>
     </tr>
-    <tr *ngFor=" let p of filteredProducts">
-      <td>{{ p.$value.title}}</td>
-      <td>{{ p.$value.price}}</td>
-      <td>
-        <a [routerLink]="['/admin/menu/', p.$key]">Edit</a>
+    <tr class="line" *ngFor=" let p of filteredProducts">
+      <td class="name">{{ p.$value.title}}</td>
+      <td class="price">{{ p.$value.price|number:"1.02"}} лв.</td>
+      <td class="edit">
+        <button mat-mini-fab [routerLink]="['/admin/menu/', p.$key]">
+          <mat-icon aria-hidden="false">edit</mat-icon>
+        </button>
       </td>
+
+
     </tr>
 
   </table>
+
+
+  <p class="footer">end/p>

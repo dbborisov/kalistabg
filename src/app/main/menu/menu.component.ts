@@ -13,6 +13,7 @@ export class MenuComponent implements OnInit {
   products: any[] = [];
   filterdProducts: any[] = [];
   category: string;
+  drawer;
   shoppingCardId;
   wasClicked = false;
 

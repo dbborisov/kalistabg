@@ -48,7 +48,7 @@ export class GalleryComponent implements OnInit {
           changes.map(c => ({ key: c.payload.key, ...c.payload.val() }))
         )
       ).subscribe(fileUploads => {
-        console.log(        this.imageObject = fileUploads    );
+        // console.log(        this.imageObject = fileUploads    );
         this.imageObject = fileUploads;
       });
     };

@@ -1,14 +1,16 @@
-<div class="center">Меню</div>
+<div class="center"><mat-divider></mat-divider></div>
+
 <div class="container row">
 
   <div class="stick">
 
     <div class="col-3">
-      <menu-category [category]="category"></menu-category>
+      <menu-category [category]="category" ></menu-category>
     </div>
   </div>
 
   <div class="menu-box">
+   
     <div class="flip-card  " *ngFor="let product of filterdProducts ; let i = index">
       <div class="flip-card-inner "(click)="onClick(i)" >
         <div class="flip-card-front">

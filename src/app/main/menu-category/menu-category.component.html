@@ -1,12 +1,21 @@
 
+
+<!-- new menu selector -->
+<div class="mover">
+  <!-- blink_me  -->
+<button class="vertical "mat-raised-button (click)="drawer.toggle()">Меню<mat-icon class="blink_me" aria-hidden="false">{{drawer.opened?'navigate_before':'navigate_next'}}</mat-icon> </button>
+
+<mat-drawer-container class="menu" [hasBackdrop]="false">
+  <mat-drawer #drawer mode="side">
+
 <div class="menu">
 
   <ul class="side ">
-    <li  mat-raised-button  class="menu " >
+    <!-- <li  mat-raised-button  class="menu " >
         <button routerLink="/menu" class="menu li "  [class.active]="!category">
             Всички
         </button>
-    </li>
+    </li> -->
     <li *ngFor="let c of categories$ | async" class="menu ">
         <button mat-raised-button  routerLink="/menu"
         [queryParams]="{category: c.payload.key}"
@@ -17,3 +26,10 @@
     </li>
 </ul>
 </div>
+  </mat-drawer>
+  <mat-drawer-content class="toggler">
+
+  </mat-drawer-content>
+</mat-drawer-container>
+</div>
+

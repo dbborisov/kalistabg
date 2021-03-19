@@ -1,2 +1,12 @@
-<button  (click) = "login()">Login with google</button>
-<button  (click) = "logout()">logout</button>
+
+<div class="container">
+<div class="login" *ngIf="!isUser">
+<button  (click) = "login()">Използвай Google акаунта си</button>
+</div>
+
+<div class="success" *ngIf="isUser">
+  <p>Привет {{this.isAuth.name}}</p>
+  <p>  Успешно сте влезли в Системата</p>
+  <button class="exit" color="warn" (click) = "logout()"><mat-icon class="exit"  >logout</mat-icon>Изход </button>
+ </div>
+</div>

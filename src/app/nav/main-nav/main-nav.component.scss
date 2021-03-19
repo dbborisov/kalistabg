@@ -1,3 +1,5 @@
+$mainColor: rgb(37, 25, 6);
+$navColor:rgb(167, 159, 148);
 
 .main-container{
   width: 98.8vw;
@@ -24,8 +26,8 @@
       position: absolute;
       top: 12vw;
       right: 20px;
-      color: rgb(37, 25, 6);
-      background-color: rgb(167, 159, 148);
+      color: $mainColor;
+      background-color: $navColor;
       border-radius: 0 0 23%;
 
     }
@@ -33,9 +35,10 @@
       position: absolute;
       top: 8vw;
       left: 20px;
-      color: rgb(37, 25, 6);
-      background-color: rgb(167, 159, 148);
+      color: $mainColor;
+      background-color: $navColor;
       border-radius: 0 23% 23%;
+      z-index: 15;
     }
     button:hover{
       background-color: RoyalBlue;
@@ -45,7 +48,12 @@
 
 
 .sidenav{
-  width: 50vw;
+  width: 30vw;
+  display: flex;
+  button{
+    display: flex;
+    flex-direction: column;
+  }
 }
 
 

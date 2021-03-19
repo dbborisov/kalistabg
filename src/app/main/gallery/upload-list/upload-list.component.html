@@ -1,11 +1,9 @@
-<div class="card">
-  <div class="card-header">List of Files</div>
-  <ul
-    class="list-group list-group-flush"
-    *ngFor="let file of fileUploads"
-  >
-    <li class="list-group-item">
+<div class="container">
+  <div class="header">Качени в галерия</div>
+  <div class="details">
+  <div class="detail"
+    *ngFor="let file of fileUploads" >
       <app-upload-details [fileUpload]='file'></app-upload-details>
-    </li>
-  </ul>
+  </div>
+</div>
 </div>

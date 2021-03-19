@@ -1,0 +1,27 @@
+.container
+{
+  width: 98.8vw;
+  height: 100vw;
+  text-align: center;
+}
+
+
+.success{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+.login{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.exit{
+  // text-align: center;
+}
+button{
+  text-align: center;
+}

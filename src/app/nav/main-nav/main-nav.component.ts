@@ -24,7 +24,7 @@ export class MainNavComponent implements OnInit {
     this.getScreenSize();
    auth.appUser$.subscribe(user=>{
      this.appUser = user;
-    this.isAdmin = user.isAdmin;
+    this.isAdmin = user?.isAdmin;
     });
    this.options = fb.group({
     bottom: 0,

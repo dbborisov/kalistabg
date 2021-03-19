@@ -1,3 +1,4 @@
+<div class=container>
 <label>
   <input
     type="file"
@@ -7,7 +8,7 @@
 </label>
 
 <button
-  class="btn btn-success btn-sm"
+  class="btn"
   [disabled]="!selectedFiles"
   (click)="upload()"
 >
@@ -26,3 +27,7 @@
     {{ percentage }}%
   </div>
 </div>
+</div>
+
+
+

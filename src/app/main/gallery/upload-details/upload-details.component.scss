@@ -1,0 +1,15 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between ;
+}
+.line{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.show-image
+{
+  width: 150px;
+  height: 150px;
+}

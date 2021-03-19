@@ -6,7 +6,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'edit-menu',
   templateUrl: './edit-menu.component.html',
-  styleUrls: ['./edit-menu.component.sass']
+  styleUrls: ['./edit-menu.component.scss']
 })
 export class EditMenuComponent implements OnInit{
 

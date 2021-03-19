@@ -1,0 +1,56 @@
+$mainColor: rgb(158, 119, 55);
+
+.search{
+  margin-top: 30px;
+  display:flex;
+  justify-content:center;
+}
+
+table{
+
+
+  tr{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    color: white;
+    padding: 10px;
+  }
+  th{
+    background-color: $mainColor;
+  }
+  .name{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    padding-left: 20px;
+  }
+  .price{
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    text-align: center;
+  }
+.line{
+  border-bottom: 1px black solid;
+
+}
+ .edit{
+   text-align: end;
+  button{
+    color: $mainColor;
+    background-color: white;
+    transform: rotateZ(-40deg);
+    transition: transform .5s;
+  }
+  button:hover{
+    transform: scale(1);
+  }
+ }
+}
+
+
+
+.footer{
+ color: $mainColor;
+  background-color: $mainColor;
+}
